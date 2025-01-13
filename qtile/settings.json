@@ -1,0 +1,10 @@
+{
+    "wmname": "LG3D",
+    "margin": 0.0,
+    "corner_radius": 5,
+    "screen_edge_gap": 10,
+    "window_margin": 5,
+    "font": "SFMono Nerd Font, Bold",
+    "font_size": 14,
+    "border_focus_color": "#B2C9D3"
+}

@@ -1,0 +1,18 @@
+f006pq6@lisplab1.thayer's password: 
+Welcome to Ubuntu 22.04.4 LTS (GNU/Linux 5.15.0-102-generic x86_64)
+
+Welcome to lisplab1.
+
+You are currently in your ThayerFS home directory. All ThayerFS shares are
+available under the /thayerfs directory.
+
+Information about the linux clients is available on the Thayer Computing site:
+  http://computing.thayer.dartmouth.edu/
+
+If you have any questions or need assistance, please e-mail
+  computing@thayer.dartmouth.edu
+
+
+  << You are currently using 4.09G of your 5.00G home directory quota. >>
+
+[1m[7m%[27m[1m[0m                                                                                                        ]2;f006pq6@lisplab1:~]1;~[0m[27m[24m[J(base) [01;32m➜  [36m~[00m [K[?1h=[?2004h
