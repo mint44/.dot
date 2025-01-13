@@ -1,0 +1,25 @@
+/*
+/*/
+!/asbru/
+!/atuin/
+!/autorandr/
+!/btop/
+!/conky/
+!/dunst/
+!/kitty/
+!/nitrogen/
+!/nvim/
+!/picom/
+!/qtile/
+!/ranger/
+!/rofi/
+!/wal/
+!/warpd/
+!.zshrc
+!.gitignore
+!pkglist.txt
+!iptv
+
+
+# Ignore Python bytecode files
+*.pyc
