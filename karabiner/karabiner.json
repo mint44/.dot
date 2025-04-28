@@ -1,0 +1,99 @@
+{
+    "global": { "show_in_menu_bar": false },
+    "profiles": [
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Tap Caps Lock for ESC or Hold for Control",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_control",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Tap quote",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "quote",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_option",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "quote" }],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 45078,
+                        "vendor_id": 1133
+                    },
+                    "ignore": false,
+                    "mouse_flip_vertical_wheel": true
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 768,
+                        "vendor_id": 12538
+                    },
+                    "ignore": false,
+                    "mouse_flip_vertical_wheel": true
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 9488,
+                        "vendor_id": 2362
+                    },
+                    "ignore": false,
+                    "mouse_flip_vertical_wheel": true
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 20591,
+                        "vendor_id": 6700
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_option" }]
+                        },
+                        {
+                            "from": { "key_code": "left_option" },
+                            "to": [{ "key_code": "left_command" }]
+                        }
+                    ]
+                }
+            ],
+            "name": "Default profile",
+            "selected": true,
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        }
+    ]
+}
