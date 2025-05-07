@@ -8,17 +8,23 @@ local volume_slider = sbar.add("slider", 100, {
   icon = { drawing = false },
   slider = {
     highlight_color = colors.blue,
-    width = 0,
+    width = 80,
     background = {
       height = 6,
       corner_radius = 3,
       color = colors.bg2,
     },
+    -- background = {
+    --   color = colors.color_1,
+    --   corner_radius = 3,
+    --   height = 6,
+    -- },
     knob= {
       string = "􀀁",
       drawing = false,
     },
   },
+
 })
 
 local volume_icon = sbar.add("item", {
@@ -28,10 +34,10 @@ local volume_icon = sbar.add("item", {
     width = 0,
     align = "left",
     color = colors.grey,
-    font = {
-      style = "Regular",
-      size = 14.0,
-    },
+    -- font = {
+    --   style = "Regular",
+    --   size = 14.0,
+    -- },
   },
   label = {
     width = 25,
@@ -64,16 +70,16 @@ volume_slider:subscribe("volume_change", function(env)
   volume_slider:set({ slider = { percentage = volume } })
 end)
 
-local function animate_slider_width(width)
-  sbar.animate("tanh", 30.0, function()
-    volume_slider:set({ slider = { width = width }})
-  end)
-end
+-- local function animate_slider_width(width)
+--   sbar.animate("tanh", 30.0, function()
+--     volume_slider:set({ slider = { width = width }})
+--   end)
+-- end
 
-volume_icon:subscribe("mouse.clicked", function()
-  if tonumber(volume_slider:query().slider.width) > 0 then
-    animate_slider_width(0)
-  else
-    animate_slider_width(100)
-  end
-end)
+-- volume_icon:subscribe("mouse.clicked", function()
+--   if tonumber(volume_slider:query().slider.width) > 0 then
+--     animate_slider_width(0)
+--   else
+--     animate_slider_width(100)
+--   end
+-- end)

@@ -24,6 +24,25 @@
 
 
 return {
+  color_0 = 0xff211515,
+  color_1 = 0xffaa6c6b,
+  color_2 = 0xffaa564f,
+  color_3 = 0xff8596aa,
+  color_4 = 0xffa09aa9,
+  color_5 = 0xffaa9097,
+  color_6 = 0xffaa7f81,
+  color_7 = 0xffc7c4c4,
+  color_8 = 0xff584f4f,
+  color_9 = 0xffaa6c6b,
+  color_10 = 0xffaa564f,
+  color_11 = 0xff8596aa,
+  color_12 = 0xffa09aa9,
+  color_13 = 0xffaa9097,
+  color_14 = 0xffaa7f81,
+  color_foreground = 0xffffffff,
+  color_background = 0xff000000,
+  color_accent = 0xff0000ff,
+
   black = 0xff181926,
   white = 0xffffffff,
   red = 0xffed8796,

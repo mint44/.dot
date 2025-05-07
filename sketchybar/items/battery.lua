@@ -1,14 +1,46 @@
 local icons = require("icons")
+local colors = require("colors")
+
+-- PERCENTAGE="$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)"
+-- CHARGING="$(pmset -g batt | grep 'AC Power')"
+
+-- if [ "$PERCENTAGE" = "" ]; then
+--   exit 0
+-- fi
+
+-- case "${PERCENTAGE}" in
+--   9[0-9]|100) ICON="􀛨"
+--   ;;
+--   [6-8][0-9]) ICON="􀺸"
+--   ;;
+--   [3-5][0-9]) ICON="􀺶"
+--   ;;
+--   [1-2][0-9]) ICON="􀛩"
+--   ;;
+--   *) ICON="􀛪"
+-- esac
+
+-- if [[ "$CHARGING" != "" ]]; then
+--   ICON="􀢋"
+-- fi
+
+-- # The item invoking this script (name $NAME) will get its icon and label
+-- # updated with the current battery status
+-- sketchybar --set "$NAME" icon="$ICON" label="${PERCENTAGE}%"
+
 
 local battery = sbar.add("item", {
   position = "right",
   icon = {
-    font = {
-      style = "Regular",
-      size = 19.0,
-    }
   },
-  label = { drawing = false },
+  label = {
+
+  },
+  background = {
+    color = colors.color_4,
+    corner_radius = 3,
+    height = 20,
+  },
   update_freq = 120,
 })
 
@@ -18,6 +50,7 @@ local function battery_update()
 
     if (string.find(batt_info, 'AC Power')) then
       icon = icons.battery.charging
+      charge = "AC"
     else
       local found, _, charge = batt_info:find("(%d+)%%")
       if found then
@@ -37,7 +70,10 @@ local function battery_update()
       end
     end
 
-    battery:set({ icon = icon })
+    battery:set({ 
+      icon = icon,
+      label = charge,
+    } )
   end)
 end
 

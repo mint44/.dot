@@ -65,7 +65,7 @@ sbar.default({
       style = "Bold",
       size = 10.0
     },
-    color = colors.white,
+    color = colors.color_foreground,
     padding_left = 6,
     padding_right = 3,
   },
@@ -75,11 +75,9 @@ sbar.default({
       style = "Bold",
       size = 10.0
     },
-    color = colors.white,
+    color = colors.color_foreground,
     padding_left = 3,
     padding_right = 6,
   },
+  y_offset = -5,
 })
-
-
-
