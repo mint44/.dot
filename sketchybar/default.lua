@@ -81,3 +81,8 @@ sbar.default({
   },
   y_offset = -5,
 })
+
+-- add event event_custom_windows_changed
+
+sbar.add("event", "event_custom_windows_changed")
+sbar.add("event", "event_custom_layout_changed")

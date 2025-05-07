@@ -4,21 +4,27 @@ local icons = require("icons")
 local volume_slider = sbar.add("slider", 100, {
   position = "right",
   updates = true,
-  label = { drawing = false },
-  icon = { drawing = false },
+  icon = {
+    padding_right = 8,
+    -- font = {
+    --   style = "Black",
+    --   size = 12.0,
+    -- },
+  },
+  background = {
+    color = colors.color_2,
+    corner_radius = 3,
+    height = 20,
+  },
+
   slider = {
-    highlight_color = colors.blue,
-    width = 80,
+    highlight_color = colors.color_foreground,
+    width = 60,
     background = {
       height = 6,
       corner_radius = 3,
-      color = colors.bg2,
+      color = colors.color_background,
     },
-    -- background = {
-    --   color = colors.color_1,
-    --   corner_radius = 3,
-    --   height = 6,
-    -- },
     knob= {
       string = "􀀁",
       drawing = false,
@@ -27,27 +33,27 @@ local volume_slider = sbar.add("slider", 100, {
 
 })
 
-local volume_icon = sbar.add("item", {
-  position = "right",
-  icon = {
-    string = icons.volume._100,
-    width = 0,
-    align = "left",
-    color = colors.grey,
-    -- font = {
-    --   style = "Regular",
-    --   size = 14.0,
-    -- },
-  },
-  label = {
-    width = 25,
-    align = "left",
-    font = {
-      style = "Regular",
-      size = 14.0,
-    },
-  },
-})
+-- local volume_icon = sbar.add("item", {
+--   position = "right",
+--   icon = {
+--     string = icons.volume._100,
+--     width = 0,
+--     align = "left",
+--     color = colors.grey,
+--     -- font = {
+--     --   style = "Regular",
+--     --   size = 14.0,
+--     -- },
+--   },
+--   label = {
+--     width = 25,
+--     align = "left",
+--     font = {
+--       style = "Regular",
+--       size = 14.0,
+--     },
+--   },
+-- })
 
 volume_slider:subscribe("mouse.clicked", function(env)
   sbar.exec("osascript -e 'set volume output volume " .. env["PERCENTAGE"] .. "'")
@@ -66,7 +72,8 @@ volume_slider:subscribe("volume_change", function(env)
     icon = icons.volume._10
   end
 
-  volume_icon:set({ label = icon })
+  -- volume_icon:set({ label = icon })
+  volume_slider:set({ icon = { string = icon } })
   volume_slider:set({ slider = { percentage = volume } })
 end)
 

@@ -11,11 +11,14 @@ end
 local function space_selection(env)
   local color = env.SELECTED == "true" and colors.white or colors.bg2
 
+
   sbar.set(env.NAME, {
-    icon = { highlight = env.SELECTED, },
-    label = { highlight = env.SELECTED, },
+    icon = { highlight = env.SELECTED, font = { style = env.SELECTED == "true" and "Heavy" or "Regular" } },
+    -- label = { highlight = env.SELECTED, },
     background = { border_color = color }
   })
+
+ 
 end
 
 local spaces = {}
@@ -27,15 +30,17 @@ for i = 1, 10, 1 do
       padding_left = 4,
       padding_right = 4,
       color = colors.white,
-      highlight_color = colors.white,
+      highlight_color = colors.magenta,
     },
-    background = {
-      color = colors.bg1,
-      -- border_color = colors.bg2,
-      height = 20,
-      corner_radius = 3,
-      border_width = 1,
-    },
+    -- background = {
+    --   -- color = colors.bg1,
+    --   -- border_color = colors.bg2,
+    --   height = 20,
+    --   corner_radius = 3,
+    --   color = colors.color_3,
+    --   drawing = false,
+    --   -- border_width = 1,
+    -- },
 
     padding_left = (i == 1) and -10 or 2,
     padding_right = 2,
