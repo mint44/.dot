@@ -2,12 +2,12 @@ local front_app = sbar.add("item", {
   icon = {
     drawing = false
   },
-  label = {
-    font = {
-      style = "Black",
-      size = 12.0,
-    }
-  }
+  -- label = {
+  --   font = {
+  --     style = "Black",
+  --     size = 12.0,
+  --   }
+  -- }
 })
 
 front_app:subscribe("front_app_switched", function(env)

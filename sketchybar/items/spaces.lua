@@ -24,19 +24,27 @@ for i = 1, 10, 1 do
     associated_space = i,
     icon = {
       string = i,
-      padding_left = 10,
-      padding_right = 10,
+      padding_left = 4,
+      padding_right = 4,
       color = colors.white,
-      highlight_color = colors.red,
+      highlight_color = colors.white,
     },
-    padding_left = 2,
+    background = {
+      color = colors.bg1,
+      -- border_color = colors.bg2,
+      height = 20,
+      corner_radius = 3,
+      border_width = 1,
+    },
+
+    padding_left = (i == 1) and -10 or 2,
     padding_right = 2,
     label = {
-      padding_right = 20,
-      color = colors.grey,
-      highlight_color = colors.white,
-      font = "sketchybar-app-font:Regular:16.0",
-      y_offset = -1,
+      -- padding_right = 20,
+      -- color = colors.grey,
+      -- highlight_color = colors.white,
+      -- font = "sketchybar-app-font:Regular:16.0",
+      -- y_offset = -1,
       drawing = false,
     },
   })
@@ -47,17 +55,17 @@ for i = 1, 10, 1 do
 end
 
 sbar.add("bracket", spaces, {
-  background = { color = colors.bg1, border_color = colors.bg2 }
+  background = { color = colors.bg, border_color = colors.bg2 }
 })
 
 local space_creator = sbar.add("item", {
-  padding_left=10,
+  padding_left=0,
   padding_right=8,
   icon = {
-    string = "􀆊",
+    string = "+",
     font = {
-      style = "Heavy",
-      size = 16.0,
+      -- style = "Heavy",
+      -- size = 16.0,
     },
   },
   label = { drawing = false },

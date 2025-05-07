@@ -1,15 +1,15 @@
 local cal = sbar.add("item", {
   icon = {
-    padding_right = 0,
-    font = {
-      style = "Black",
-      size = 12.0,
-    },
+    -- padding_right = 0,
+    -- font = {
+    --   style = "Black",
+    --   size = 12.0,
+    -- },
   },
-  label = {
-    width = 45,
-    align = "right",
-  },
+  -- label = {
+  --   width = 45,
+  --   align = "right",
+  -- },
   position = "right",
   update_freq = 15,
 })
@@ -22,4 +22,3 @@ end
 
 cal:subscribe("routine", update)
 cal:subscribe("forced", update)
-
