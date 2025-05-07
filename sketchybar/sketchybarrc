@@ -37,7 +37,7 @@ default=(
 
 background=(
   background.color=${COLOR_3}
-  background.corner_radius=0
+  background.corner_radius=3
   background.height=20
 )
 sketchybar --default "${default[@]}"
@@ -91,6 +91,7 @@ sketchybar --add item chevron left \
            --add item front_app left \
            --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
            --subscribe front_app front_app_switched
+           
 
 # add custom event event_custom_windows_changed
 # add a text item to display this event, subscribe to event_custom_windows_changed, run script windows_changed.sh

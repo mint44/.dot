@@ -56,10 +56,10 @@ yabai -m rule --add app="^FaceTime$" manage=off
 
 
 # communcation discord messages slack always on space 4
-yabai -m rule --add app="^Slack$" space=4
-yabai -m rule --add app="^Messages$" space=4
-yabai -m rule --add app="^Discord$" space=4
-yabai -m rule --add app="^Mail$" space=4
+yabai -m rule --add app="^Slack$" space=5
+yabai -m rule --add app="^Messages$" space=5
+yabai -m rule --add app="^Discord$" space=5
+yabai -m rule --add app="^Mail$" space=5
 
 yabai -m rule --add app="^Zen.*$" \
          role="AXLayoutArea" \

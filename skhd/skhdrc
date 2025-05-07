@@ -89,14 +89,14 @@ alt - a : yabai -m display --focus prev
 alt - s : yabai -m display --focus next
 
 # swap managed window
-ctrl + alt - h : yabai -m window --swap west
-ctrl + alt - j : yabai -m window --swap south
-ctrl + alt - k : yabai -m window --swap north
-ctrl + alt - l : yabai -m window --swap east
+shift + alt - h : yabai -m window --swap west
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - l : yabai -m window --swap east
 
 # change size of windows with j to decrease and k to increase
-shift + alt - j : yabai -m window --resize right:-20:0
-shift + alt - k : yabai -m window --resize right:20:0
+ctrl + alt - j : yabai -m window --resize right:-20:0
+ctrl + alt - k : yabai -m window --resize right:20:0
 
 # change layout by execute reset to default padding and  ./layout.sh
 alt - tab:   sh ~/.config/skhd/layout.sh && \
