@@ -21,7 +21,7 @@ local function update()
   local cmd = "curl -s wttr.in/boston?format=\"%t\""
   sbar.exec(cmd, function(output)
     temp:set({
-      label = "Boston: " .. output,
+      label = output,
     })
   end)
 end

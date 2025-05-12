@@ -3,7 +3,6 @@ local colors = require("colors")
 
 
 local cal = sbar.add("item", {
-  padding_right = -10,
   icon = {
     string = "􀐫",
     -- drawing = false,

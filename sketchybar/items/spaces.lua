@@ -21,6 +21,13 @@ local function space_selection(env)
  
 end
 
+-- -- make color more opague percentage, #ff -> #00 for example
+local function make_opaque(color, percentage)
+  -- local a, r, g, b = color:match("(%x%x)(%x%x)(%x%x)(%x%x)")
+  -- color: #argb each 2 digits
+  return color
+end
+
 local spaces = {}
 for i = 1, 10, 1 do
   local space = sbar.add("space", {
@@ -29,7 +36,7 @@ for i = 1, 10, 1 do
       string = i,
       padding_left = 4,
       padding_right = 4,
-      color = colors.white,
+      color = make_opaque(colors.white, 0.5),
       highlight_color = colors.magenta,
     },
     -- background = {
@@ -65,7 +72,7 @@ sbar.add("bracket", spaces, {
 
 local space_creator = sbar.add("item", {
   padding_left=0,
-  padding_right=8,
+  padding_right=0,
   icon = {
     string = "+",
     font = {
@@ -73,7 +80,11 @@ local space_creator = sbar.add("item", {
       -- size = 16.0,
     },
   },
-  label = { drawing = false },
+  label = { 
+    drawing = false,
+  -- padding_left = 0,
+  -- padding_right = 0,
+  },
   associated_display = "active",
 })
 

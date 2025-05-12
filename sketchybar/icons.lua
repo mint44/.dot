@@ -3,6 +3,7 @@ return {
   apple = "􀣺",
   preferences = "􀺽",
 
+  headphone="􀑈",
   volume = {
     _100="􀊩",
     _66="􀊧",

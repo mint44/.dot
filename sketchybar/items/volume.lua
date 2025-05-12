@@ -61,20 +61,32 @@ end)
 
 volume_slider:subscribe("volume_change", function(env)
   local volume = tonumber(env.INFO)
-  local icon = icons.volume._0
-  if volume > 60 then
-    icon = icons.volume._100
-  elseif volume > 30 then
-    icon = icons.volume._66
-  elseif volume > 10 then
-    icon = icons.volume._33
-  elseif volume > 0 then
-    icon = icons.volume._10
-  end
+  -- SwitchAudioSource -c
+  -- check output source, if "Macbook" in not in result string, then set a headphone icon 
 
-  -- volume_icon:set({ label = icon })
-  volume_slider:set({ icon = { string = icon } })
-  volume_slider:set({ slider = { percentage = volume } })
+  sbar.exec("SwitchAudioSource -c", function(output)
+    local icon = ""
+    if string.find(output, "MacBook") then
+      icon = icons.volume._0
+      if volume > 60 then
+        icon = icons.volume._100
+      elseif volume > 30 then
+        icon = icons.volume._66
+      elseif volume > 10 then
+        icon = icons.volume._33
+      elseif volume > 0 then
+        icon = icons.volume._10
+      end
+    else
+      icon = icons.headphone
+    end
+    -- volume_icon:set({ label = icon })
+    volume_slider:set({ icon = { string = icon } })
+    volume_slider:set({ slider = { percentage = volume } })
+
+  end)
+
+
 end)
 
 -- local function animate_slider_width(width)

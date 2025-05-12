@@ -51,9 +51,11 @@ local function battery_update()
     if (string.find(batt_info, 'AC Power')) then
       icon = icons.battery.charging
       charge = "AC"
+      charge_str = charge
     else
       local found, _, charge = batt_info:find("(%d+)%%")
       if found then
+        charge_str = charge .. "%"
         charge = tonumber(charge)
       end
 
@@ -72,7 +74,7 @@ local function battery_update()
 
     battery:set({ 
       icon = icon,
-      label = charge,
+      label = charge_str ,
     } )
   end)
 end

@@ -86,6 +86,7 @@ local appIcons = {
   ["Podcasts"]            = ICON_PODCAST,
   ["TV"]                  = ICON_PLAY,
   ["QuickTime Player"]    = ICON_PLAY,
+  ["stremio"]              = ICON_PLAY,
   ["VLC"]                 = ICON_PLAY,
   ["Books"]               = ICON_BOOK,
   ["Xcode"]               = ICON_DEV,
@@ -96,7 +97,7 @@ local appIcons = {
   ["Activity Monitor"]    = ICON_CHART,
   ["Disk Utility"]        = ICON_DISK,
   ["Screenshot"]          = ICON_PREVIEW,
-  ["Preview"]             = ICON_PREVIEW,
+  ["Preview"]             = ICON_BOOK,
   ["1Password"]           = ICON_PASSKEY,
   ["NordVPN"]             = ICON_VPN,
   ["Progressive Downloaded"] = ICON_DOWNLOAD,
@@ -108,6 +109,7 @@ local appIcons = {
   ["Curve"]               = ICON_PEN,
   ["VMware Fusion"]       = ICON_REMOTEDESKTOP,
   ["UTM"]                 = ICON_REMOTEDESKTOP,
+  ["iPhone Mirroring"]    = ICON_REMOTEDESKTOP,
   default                 = ICON_APP,  -- fallback
 }
 
