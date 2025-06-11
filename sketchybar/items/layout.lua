@@ -1,6 +1,7 @@
 local colors = require("colors")
 local layout = sbar.add("item", {
   position = "left",
+  padding_left = -4,
 })
 
 local function update()
@@ -18,7 +19,7 @@ local function update()
       icon = "?"
     end
     sbar.set(layout.name, {
-        label = output,
+        -- label = output,
         icon = {
             string = icon,
         },

@@ -85,8 +85,8 @@ alt - k : yabai -m window --focus north || yabai -m window --focus stack.prev ||
 alt - j : yabai -m window --focus south || yabai -m window --focus stack.next || yabai -m window --focus stack.first
 
 # focus monitor alt a alt s
-alt - a : yabai -m display --focus prev
-alt - s : yabai -m display --focus next
+alt - 0x2B : yabai -m display --focus prev
+alt - 0x2F : yabai -m display --focus next
 
 # swap managed window
 shift + alt - h : yabai -m window --swap west
@@ -212,5 +212,15 @@ alt - w: skhd -k "cmd - w"
 
 # reload yabai config
 # ctrl + alt - q : yabai --restart-service ; sketchybar --reload
-ctrl + alt - q : sketchybar --reload
+ctrl + alt - q : sketchybar --reload; toptop_bar --reload
+
+
+# alt - a : sh ~/.config/skhd/focus_window.sh 1
+# alt - s : sh ~/.config/skhd/focus_window.sh 2
+alt - a : sh ~/.config/skhd/focus_window.sh 1
+alt - s : sh ~/.config/skhd/focus_window.sh 2
+alt - d : sh ~/.config/skhd/focus_window.sh 3
+alt - f : sh ~/.config/skhd/focus_window.sh 4
+alt - g : sh ~/.config/skhd/focus_window.sh 5
+alt - h : sh ~/.config/skhd/focus_window.sh 6
 

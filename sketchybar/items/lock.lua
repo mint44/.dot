@@ -1,5 +1,5 @@
 -- require("bar")
-sbar = require("sketchybar")
+-- sbar = require("sketchybar")
 -- require
 local colors = require("colors")
 -- TIME=$(curl -s 'https://maps.trilliumtransit.com/gtfsmap-realtime/feed/dartmouth-vt-us/arrivals?stopCode=4206789&stopID=4206789' | jq -r '.data[] | select(.route_id == "76431") | .formattedTime' | head -n 1)
@@ -38,23 +38,24 @@ local colors = require("colors")
 --   background.height=20
 -- )
 local lock = sbar.add("item", {
-
-  padding_right = -10,
+  padding_right = -14,
+  padding_left = 6,
+  position = "right",
   icon = {
     -- string = "􀎠",
     -- padding_right = 8,
-    drawing = false,
+    -- drawing = false,
   },
   label = {
     -- drawing = false,
     -- string = "Sachem: $TIME",
     -- width = 45,
     -- align = "left",
-    padding_left = 6,
+    drawing = false,
   },
   position = "right",
   background = {
-    color = colors.color_5,
+    -- color = colors.color_5,
     corner_radius = 3,
     height = 20,
   },
@@ -85,7 +86,7 @@ local update = function(is_clicked)
   -- end
 
   lock:set({ 
-    label = {
+    icon = {
         string = icon,
         padding_right = 8,
     },
@@ -104,8 +105,10 @@ local function toggle_lock()
   local locked = sbar.query("bar")["topmost"]
   if locked == "off" then
     sbar.bar({ topmost = "on" })
+    sbar.exec("toptop_bar --bar topmost=on")
   else
     sbar.bar({ topmost = "off" })
+    sbar.exec("toptop_bar --bar topmost=off")
   end
   update()
 end

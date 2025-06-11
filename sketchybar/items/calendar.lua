@@ -17,12 +17,13 @@ local cal = sbar.add("item", {
   --   align = "right",
   -- },
   background = {
-    color = colors.color_1,
+    -- color = colors.color_1,
     corner_radius = 3,
     height = 20,
   },
   position = "right",
   update_freq = 15,
+  padding_right = -8,
   
 })
 
@@ -36,3 +37,6 @@ end
 
 cal:subscribe("routine", update)
 cal:subscribe("forced", update)
+cal:subscribe("mouse.clicked", function(_)
+  sbar.exec("skhd -k 'fn - n'")
+end)

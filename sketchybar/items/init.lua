@@ -2,7 +2,6 @@
 require("items.spaces")
 -- require("items.front_app")
 require("items.layout")
-require("items.apps")
 require("items.lock")
 require("items.calendar")
 -- require("items.uname")

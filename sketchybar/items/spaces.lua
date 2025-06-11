@@ -9,13 +9,19 @@ local function mouse_click(env)
 end
 
 local function space_selection(env)
-  local color = env.SELECTED == "true" and colors.white or colors.bg2
-
+  -- local color = env.SELECTED == "true" and colors.white or colors.bg2
+  local color = colors.white
 
   sbar.set(env.NAME, {
-    icon = { highlight = env.SELECTED, font = { style = env.SELECTED == "true" and "Heavy" or "Regular" } },
+    -- icon = { highlight = env.SELECTED, font = {} },
     -- label = { highlight = env.SELECTED, },
-    background = { border_color = color }
+    background = {
+      color = env.SELECTED == "true" and colors.accent or colors.background,
+    },
+    icon = {
+      color = env.SELECTED == "true" and colors.background or colors.accent,
+    }
+    
   })
 
  
@@ -36,20 +42,17 @@ for i = 1, 10, 1 do
       string = i,
       padding_left = 4,
       padding_right = 4,
-      color = make_opaque(colors.white, 0.5),
-      highlight_color = colors.magenta,
+      -- color = make_opaque(colors.white, 0.5),
+      -- highlight_color = colors.black,
     },
-    -- background = {
-    --   -- color = colors.bg1,
-    --   -- border_color = colors.bg2,
-    --   height = 20,
-    --   corner_radius = 3,
-    --   color = colors.color_3,
-    --   drawing = false,
-    --   -- border_width = 1,
-    -- },
+
+    background = {
+      height = 16,
+      corner_radius = 3,
+    },
 
     padding_left = (i == 1) and -10 or 2,
+    -- padding_left = 2,
     padding_right = 2,
     label = {
       -- padding_right = 20,
@@ -67,27 +70,27 @@ for i = 1, 10, 1 do
 end
 
 sbar.add("bracket", spaces, {
-  background = { color = colors.bg, border_color = colors.bg2 }
+  background = { color = colors.background, border_color = colors.foreground_2}
 })
 
-local space_creator = sbar.add("item", {
-  padding_left=0,
-  padding_right=0,
-  icon = {
-    string = "+",
-    font = {
-      -- style = "Heavy",
-      -- size = 16.0,
-    },
-  },
-  label = { 
-    drawing = false,
-  -- padding_left = 0,
-  -- padding_right = 0,
-  },
-  associated_display = "active",
-})
+-- local space_creator = sbar.add("item", {
+--   padding_left=0,
+--   padding_right=0,
+--   icon = {
+--     string = "+",
+--     font = {
+--       -- style = "Heavy",
+--       -- size = 16.0,
+--     },
+--   },
+--   label = { 
+--     drawing = false,
+--   -- padding_left = 0,
+--   -- padding_right = 0,
+--   },
+--   associated_display = "active",
+-- })
 
-space_creator:subscribe("mouse.clicked", function(_)
-  sbar.exec("yabai -m space --create")
-end)
+-- space_creator:subscribe("mouse.clicked", function(_)
+--   sbar.exec("yabai -m space --create")
+-- end)

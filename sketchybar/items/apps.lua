@@ -74,6 +74,7 @@ local function get_apps(env)
   sbar.exec("yabai -m query --windows id,title,app,has-focus --space", update_windows)
 end
 
+event_custom_windows_changed
 apps:subscribe("space_change", get_apps)
 apps:subscribe("event_custom_windows_changed", get_apps)
 -- apps:subscribe("front_app_switched", get_apps)

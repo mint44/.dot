@@ -48,7 +48,7 @@ local bus = sbar.add("item", {
   position = "right",
   update_freq = 10,
   background = {
-    color = colors.color_5,
+    -- color = colors.color_5,
     corner_radius = 3,
     height = 20,
   },

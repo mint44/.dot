@@ -21,6 +21,7 @@ local ICON_PODCAST        = ""
 local ICON_PLAY           = ""
 local ICON_BOOK           = ""
 local ICON_DEV            = ""
+local ICON_GAME           = ""
 local ICON_BOOKINFO       = ""
 local ICON_CHART          = ""
 local ICON_DISK           = ""
@@ -109,6 +110,7 @@ local appIcons = {
   ["Curve"]               = ICON_PEN,
   ["VMware Fusion"]       = ICON_REMOTEDESKTOP,
   ["UTM"]                 = ICON_REMOTEDESKTOP,
+  ["Steam Helper"]        = ICON_GAME,
   ["iPhone Mirroring"]    = ICON_REMOTEDESKTOP,
   default                 = ICON_APP,  -- fallback
 }

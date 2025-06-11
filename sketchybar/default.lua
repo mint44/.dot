@@ -57,15 +57,15 @@ local colors = require("colors")
 --   y_offset=-5
 -- )
 sbar.default({
-  padding_left = 5,
-  padding_right = 5,
+  -- padding_left = 5,
+  -- padding_right = 5,
   icon = {
     font = {
       family = settings.font,
       style = "Bold",
       size = 10.0
     },
-    color = colors.color_foreground,
+    color = colors.accent,
     padding_left = 6,
     padding_right = 3,
   },
@@ -79,10 +79,9 @@ sbar.default({
     padding_left = 3,
     padding_right = 6,
   },
-  y_offset = -5,
+  y_offset = 0,
 })
 
 -- add event event_custom_windows_changed
-
 sbar.add("event", "event_custom_windows_changed")
 sbar.add("event", "event_custom_layout_changed")

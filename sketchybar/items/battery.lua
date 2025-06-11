@@ -1,6 +1,6 @@
 local icons = require("icons")
 local colors = require("colors")
-
+-- -------------------------------------------------------------------------- --
 -- PERCENTAGE="$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)"
 -- CHARGING="$(pmset -g batt | grep 'AC Power')"
 
@@ -37,7 +37,7 @@ local battery = sbar.add("item", {
 
   },
   background = {
-    color = colors.color_4,
+    -- color = colors.color_4,
     corner_radius = 3,
     height = 20,
   },
@@ -49,9 +49,14 @@ local function battery_update()
     local icon = "!"
 
     if (string.find(batt_info, 'AC Power')) then
+      local found, _, charge = batt_info:find("(%d+)%%")
+      if found then
+        charge_str = charge .. "%"
+        charge = tonumber(charge)
+      end
       icon = icons.battery.charging
-      charge = "AC"
-      charge_str = charge
+      charge_str =  charge .. "%"
+      -- charge = "AC"
     else
       local found, _, charge = batt_info:find("(%d+)%%")
       if found then
@@ -81,3 +86,6 @@ end
 
 
 battery:subscribe({"routine", "power_source_change", "system_woke"}, battery_update)
+-- battery:subscribe("mouse.clicked", function(_)
+--   sbar.exec("skhd -k 'fn - c'")
+-- end)
