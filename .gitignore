@@ -17,7 +17,6 @@
 !/nvim/
 !/picom/
 !/qtile/
-!/raycast/
 !/rofi/
 !/sketchybar/
 !/toptop-bar/
@@ -29,5 +28,4 @@
 !/.zshrc
 !/pkglist.txt
 
-
-raycast/extensions/*
+raycast
