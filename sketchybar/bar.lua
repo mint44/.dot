@@ -1,6 +1,15 @@
 local colors = require("colors")
 
 
+local function transparentize(color, transparency)
+  -- Convert percentage (0-100) to alpha value (0-255)
+  local alpha = math.floor((transparency / 100) * 255)
+  -- Extract RGB components (remove alpha channel)
+  local rgb = color & 0x00ffffff
+  -- Combine with new alpha channel
+  return (alpha << 24) | rgb
+end
+
 
 -- - Equivalent to the --bar domain
 
@@ -19,8 +28,8 @@ local colors = require("colors")
 -- -sketchybar --bar topmost=off position=top height=38 blur_radius=30 color=0xff000000  
 sbar.bar({
   position = "top",
-  height = 22,
-  color = colors.background,
+  height = 40,
+  color = transparentize(colors.background, colors.transparency),
   topmost="on",
   -- color = colors.blue,
   -- border_color = colors.bar.border,
@@ -29,4 +38,5 @@ sbar.bar({
   -- padding_right = 10,
   -- padding_left = 10,
   blur_radius=30,
+  notch_width=200,
 })

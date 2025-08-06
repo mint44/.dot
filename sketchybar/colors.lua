@@ -73,5 +73,7 @@ end
 return {
   foreground = gruvbox.fg,
   background = gruvbox.bg,
+  transparency = 40,
   accent = colors.white,
+  black  = colors.black,
 }

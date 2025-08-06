@@ -18,12 +18,12 @@ local volume_slider = sbar.add("slider", 100, {
   },
 
   slider = {
-    highlight_color = colors.foreground,
+    highlight_color = colors.accent,
     width = 60,
     background = {
       height = 6,
       corner_radius = 3,
-      color = colors.foreground_2,
+      color = colors.black
     },
     knob= {
       string = "􀀁",

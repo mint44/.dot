@@ -1,7 +1,7 @@
 local colors = require("colors")
 local layout = sbar.add("item", {
   position = "left",
-  padding_left = -4,
+  -- padding_left = -4,
 })
 
 local function update()
@@ -28,7 +28,6 @@ local function update()
   end)
 
 end
-
 -- layout:subscribe("routine", update)
 layout:subscribe("event_custom_layout_changed", update)
 -- layout:subscribe("event_custom_windows_changed", update)

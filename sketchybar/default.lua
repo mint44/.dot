@@ -73,7 +73,7 @@ sbar.default({
     font = {
       family = settings.font,
       style = "Bold",
-      size = 10.0
+      size = 11.0
     },
     color = colors.color_foreground,
     padding_left = 3,
