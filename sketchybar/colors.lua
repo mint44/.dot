@@ -52,21 +52,26 @@ local gruvbox = {
   accent = 0xffd79921,
 }
 
+-- Function to transparentize a color
+-- color: the original color value (e.g., 0xff123456)
+-- transparency: new alpha value (0x00 = fully transparent, 0xff = fully opaque)
+local function transparentize(color, transparency)
+  -- Extract RGB components (remove alpha channel)
+  local rgb = color & 0x00ffffff
+  -- Combine with new alpha channel
+  return (transparency << 24) | rgb
+end
+
+-- return {
+--   foreground    = transparentize(colors.lyme, 0xcc),
+--   foreground_2  = colors.grey,
+--   background    = colors.black, 
+--   accent        = transparentize(colors.lyme, 0xcc), --colors.lyme,
+
+-- }
+
 return {
-  foreground    = colors.near_gray,
-  foreground_2  = colors.grey,
-  background    =  gruvbox.bg, --colors.black,
-  -- accent     = colors.lyme,
-  -- accent     = colors.orange,
-  accent        = gruvbox.accent --colors.lyme,
-  -- bar = {
-  --   bg       = 0xff000000,
-  --   border   = 0xff494d64,
-  -- },
-  -- popup = {
-  --   bg       = 0xff1e1e2e,
-  --   border   = 0xffcad3f5
-  -- },
-  -- bg1        = 0x803c3e4f,
-  -- bg2        = 0xaa494d64,
+  foreground = gruvbox.fg,
+  background = gruvbox.bg,
+  accent = colors.white,
 }

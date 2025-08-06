@@ -167,3 +167,10 @@ n ()
     }
 }
 export PATH="${PATH}:/Users/minhb/.local/lib/python3.12/site-packages"
+
+# Only auto-attach to tmux if not already inside tmux
+if [ -z "$TMUX" ]; then
+  tmux attach -t default || tmux new -s default
+fi
+
+cd ~/Desktop/

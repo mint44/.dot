@@ -1,6 +1,7 @@
 local colors = require("colors")
 
 
+
 -- - Equivalent to the --bar domain
 
 -- sbar.bar({
@@ -18,8 +19,9 @@ local colors = require("colors")
 -- -sketchybar --bar topmost=off position=top height=38 blur_radius=30 color=0xff000000  
 sbar.bar({
   position = "top",
-  height = 20,
+  height = 22,
   color = colors.background,
+  topmost="on",
   -- color = colors.blue,
   -- border_color = colors.bar.border,
   -- shadow = true,

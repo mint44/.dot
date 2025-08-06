@@ -206,7 +206,6 @@ alt - b : /Applications/Zen.app/Contents/MacOS/zen
 #alt -space to run cmd+space
 
 alt - space: skhd -k "cmd - space"
-alt - x: skhd -k "cmd - w"
 alt - w: skhd -k "cmd - w"
 # cmd - x: skhd -k "cmd - w"
 
@@ -221,6 +220,13 @@ alt - a : sh ~/.config/skhd/focus_window.sh 1
 alt - s : sh ~/.config/skhd/focus_window.sh 2
 alt - d : sh ~/.config/skhd/focus_window.sh 3
 alt - f : sh ~/.config/skhd/focus_window.sh 4
-alt - g : sh ~/.config/skhd/focus_window.sh 5
-alt - h : sh ~/.config/skhd/focus_window.sh 6
+# alt - g : sh ~/.config/skhd/focus_window.sh 5
+# alt - h : sh ~/.config/skhd/focus_window.sh 6
 
+alt - q : $HOME/.config/skhd/kill_last_instance.sh
+alt - x : $HOME/.config/skhd/kill_last_instance.sh
+
+# prevents skhd from monitoring events for listed processes.
+.blacklist [
+    "UTM"
+]

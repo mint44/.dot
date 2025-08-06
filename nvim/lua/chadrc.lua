@@ -6,13 +6,13 @@
 local M = {}
 
 M.base46 = {
-	theme = "tokyodark",
+	theme = "gruvbox",
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
 	-- 	["@comment"] = { italic = true },
 	-- },
-  theme_toggle = {"tokyodark", "one_light"}
+  theme_toggle = {"gruvbox", "one_light"}
 }
 -- M.ui.tabufline ={
 --     order = {  "buffers", "tabs", "btns", "treeOffset" }
