@@ -1,25 +1,31 @@
+# ignore everything except the following directories
 /*
-/*/
-!/asbru/
+!/.hammerspoon/
 !/atuin/
 !/autorandr/
 !/btop/
+!/cava/
+!/cmus/
 !/conky/
 !/dunst/
+!/karabiner/
 !/kitty/
+!/neofetch/
 !/nitrogen/
+!/nix-darwin/
+!/nnn/
 !/nvim/
 !/picom/
 !/qtile/
-!/ranger/
+!/raycast/
 !/rofi/
+!/sketchybar/
+!/skhd/
 !/wal/
 !/warpd/
-!.zshrc
-!.gitignore
-!pkglist.txt
-!iptv
+!/yabai/
+!/.gitignore
+!/.zshrc
+!/pkglist.txt
 
 
-# Ignore Python bytecode files
-*.pyc
