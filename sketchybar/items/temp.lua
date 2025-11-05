@@ -15,11 +15,16 @@ local temp = sbar.add("item", {
     corner_radius = 3,
     height = 20,
   },
+  y_offset = -8,  -- Move weather down
+  padding_right = -90,  -- Move further to the right
+  padding_left  = 2. 
 })
 
 local function update()
   local cmd = "curl -s wttr.in/boston?format=\"%t\""
   sbar.exec(cmd, function(output)
+    -- set max char length to 9
+    output = output:sub(1, 9)  -- Limit to 0 characters
     temp:set({
       label = output,
     })

@@ -192,7 +192,10 @@ alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 alt - v :   yabai -m space --layout stack  && \
             yabai -m space --padding abs:100:100:100:100 && \
             sketchybar --trigger event_custom_layout_changed
-            # yabai -m space --balance
+
+shift + alt  - v :   yabai -m space --padding abs:12:12:12:12 
+                    # sketchybar --trigger event_custom_layout_changed
+                    # yabai -m space --balance
 
 # toggle sticky(+float), picture-in-picture
 # alt - p : yabai -m window --toggle sticky --toggle pip

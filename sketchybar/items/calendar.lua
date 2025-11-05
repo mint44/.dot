@@ -3,6 +3,7 @@ local colors = require("colors")
 
 
 local cal = sbar.add("item", {
+  name = "calendar",
   icon = {
     string = "􀐫",
     -- drawing = false,
@@ -24,7 +25,7 @@ local cal = sbar.add("item", {
   position = "right",
   update_freq = 15,
   padding_right = -8,
-  
+  y_offset = 8,  -- Move clock up
 })
 
 -- sketchybar --set "$NAME" label="$(date '+%d/%m %I:%M %p')"

@@ -42,8 +42,9 @@ local colors = {
   orange = 0xfff5a97f,
   magenta = 0xffaa9097,
   grey = 0x80808080,
-  near_gray = 0xffDDDDDD,
-  lyme = 0xff56ffbe
+  lyme  = 0x8056ffbe,
+  bg = 0xff1f2428,
+  fg= 0xffe1e4e8,
 }
 
 local gruvbox = {
@@ -70,10 +71,17 @@ end
 
 -- }
 
+-- return {
+--   foreground = gruvbox.fg,
+--   background = gruvbox.bg,
+--   transparency = 30,
+--   accent = colors.white,
+--   black  = colors.black,
+-- }
 return {
-  foreground = gruvbox.fg,
-  background = gruvbox.bg,
-  transparency = 40,
-  accent = colors.white,
+  foreground = colors.fg,
+  background = colors.bg,
+  transparency = 100,
+  accent = colors.lyme,
   black  = colors.black,
 }

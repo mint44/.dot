@@ -28,7 +28,7 @@ end
 -- -sketchybar --bar topmost=off position=top height=38 blur_radius=30 color=0xff000000  
 sbar.bar({
   position = "top",
-  height = 40,
+  height = 43,
   color = transparentize(colors.background, colors.transparency),
   topmost="on",
   -- color = colors.blue,

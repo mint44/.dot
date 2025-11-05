@@ -1,4 +1,10 @@
+set aaa_mo
+set buffer_seconds=5
+:set buffer_seconds=5
 q
+save
+set output_plugin=coreaudio
+set output_plugin coreaudio
 q!
 qa
 add ~/Music

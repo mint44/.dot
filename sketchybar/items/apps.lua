@@ -5,7 +5,6 @@ local appicons = require("../items/appicons")
 
 local apps = sbar.add("bracket", "apps", {}, {
   position = "left",
-
 })
 
 local function get_app_icon(app_name)
@@ -39,17 +38,17 @@ local function update_windows(windows)
   table.sort(windows, function(a, b) return a.id < b.id end)
 
   for _, line in ipairs(windows) do
-    width = math.min(100, 750 / #windows)
+    width = math.min(60, 750 / #windows)
     sbar.add("item", "apps." .. line['id'], {
       -- scroll_texts="on",
       label = {
-        string = line['app'] .. ": " .. line['title'],
+        string = line['app'] == "Code" and (line['app'] .. ": " .. line['title']) or line['app'],
         max_chars = 18,
         width = width,
         -- scroll_duration = 70,
         -- highlight_color = colors.accent,
         -- highlight = line['has-focus'],
-        padding_right = 10, 
+        padding_right = 0, 
       },
       icon = {
         -- string = get_app_icon(line['app']),
@@ -57,12 +56,8 @@ local function update_windows(windows)
         font = "Hack Nerd Font Mono:Regular:18.0",
         -- use nerd font
         padding_left = 4,
-        padding_right = 4,
+        padding_right = 0,
         color = colors.accent,
-        -- font = {
-        --   style = "Black",
-        --   size = 12.0,
-        -- }, 
       },
       padding_right = 10,
       -- padding_top = -10,
@@ -97,7 +92,7 @@ apps:subscribe("space_change", get_apps)
 apps:subscribe("event_custom_windows_changed", get_apps)
 -- apps:subscribe("front_app_switched", get_apps)
 -- apps:subscribe("front_app_switched", focus_window)
-apps:subscribe("event_custom_windows_focused", focus_window)
+-- apps:subscribe("event_custom_windows_focused", focus_window)
 -- apps:subscribe("front_app_switched", get_apps)
 -- window_focused
 

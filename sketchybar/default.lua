@@ -75,7 +75,7 @@ sbar.default({
       style = "Bold",
       size = 11.0
     },
-    color = colors.color_foreground,
+    color = colors.foreground,
     padding_left = 3,
     padding_right = 6,
   },
