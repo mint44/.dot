@@ -17,9 +17,9 @@
 !/nvim/
 !/picom/
 !/qtile/
-!/raycast/
 !/rofi/
 !/sketchybar/
+!/toptop-bar/
 !/skhd/
 !/wal/
 !/warpd/
@@ -28,4 +28,4 @@
 !/.zshrc
 !/pkglist.txt
 
-
+raycast

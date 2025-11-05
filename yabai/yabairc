@@ -10,10 +10,15 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
+yabai -m signal --add event=window_created action="toptop_bar  --trigger event_custom_windows_changed" 
+yabai -m signal --add event=window_destroyed action="toptop_bar --trigger event_custom_windows_changed"
+yabai -m signal --add event=window_focused action="toptop_bar --trigger event_custom_windows_focused"
+
+# yabai -m signal --add event=window_focused action="$HOME/.config/yabai/update_border_color.sh"
 
 # global settings
 yabai -m config                                 \
-    external_bar                 all:40:0       \
+    external_bar                 all:43:0       \
     menubar_opacity              1.0            \
     mouse_follows_focus          off            \
     focus_follows_mouse          off            \
@@ -26,23 +31,38 @@ yabai -m config                                 \
     window_animation_duration    0.0            \
     window_animation_easing      ease_out_circ  \
     window_opacity_duration      0.0            \
-    active_window_opacity        1.0            \
-    normal_window_opacity        0.90           \
-    window_opacity               off            \
+    normal_window_opacity        1.0           \
+    active_window_opacity        1.0           \
+    window_opacity               off \
     insert_feedback_color        0xffd75f5f     \
     split_ratio                  0.50           \
     split_type                   auto           \
     auto_balance                 off            \
-    top_padding                  12 \
-    bottom_padding               12             \
-    left_padding                 12             \
-    right_padding                12             \
-    window_gap                   12             \
-    layout                       bsp            \
+    top_padding                  6  \
+    bottom_padding               6 \
+    left_padding                 6 \
+    right_padding                6 \
+    window_gap                   6             \
+    layout                       stack \
     mouse_modifier               fn             \
     mouse_action1                move           \
     mouse_action2                resize         \
     mouse_drop_action            swap
+
+# yabai -m rule --add app=".*" sub-layer=normal
+
+# rule 0.8 opacity for vs code, spotify, Messages, Discord, Mail, kitty
+yabai -m rule --add app="^Code$" opacity=1.0
+# yabai -m rule --add app="^Spotify$" opacity=0.8
+# yabai -m rule --add app="^Messages$" opacity=0.8
+# yabai -m rule --add app="^Discord$" opacity=0.8
+# yabai -m rule --add app="^Mail$" opacity=0.8
+# yabai -m rule --add app="^kitty$" opacity=0.8
+
+# disable opacity for Dota 2
+yabai -m rule --add app="^Dota 2$" opacity=1.0
+
+
 
 
 # manage=off some apps
@@ -53,13 +73,31 @@ yabai -m rule --add app="^Zoom$" manage=off
 yabai -m rule --add app="^zoom.us$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^FaceTime$" manage=off
+yabai -m rule --add app="^python$" manage=off
+# Dota 2
+yabai -m rule --add app="^Dota 2$" manage=off
 
 
 # communcation discord messages slack always on space 4
-yabai -m rule --add app="^Slack$" space=5
-yabai -m rule --add app="^Messages$" space=5
-yabai -m rule --add app="^Discord$" space=5
-yabai -m rule --add app="^Mail$" space=5
+yabai -m rule --add app="^Slack$" space=8
+yabai -m rule --add app="^Messages$" space=8
+yabai -m rule --add app="^Discord$" space=8
+yabai -m rule --add app="^Mail$" space=8
+# also zen
+yabai -m rule --add app="^Zen.*$" space=8
+
+# music spotify, Stremio always on space 6
+yabai -m rule --add app="^Spotify$" space=6
+yabai -m rule --add app="^Stremio$" space=6
+
+# anything Steam and dota 2 always on space 5
+yabai -m rule --add app="^Steam$" space=5
+yabai -m rule --add app="^Dota 2$" space=5
+
+# Zotero Obsidian always on space 4
+yabai -m rule --add app="^Zotero$" space=4
+yabai -m rule --add app="^Obsidian$" space=4
+
 
 yabai -m rule --add app="^Zen.*$" \
          role="AXLayoutArea" \
@@ -71,7 +109,7 @@ yabai -m rule --add app="^Zen.*$" \
 # yabai -m space 2 --label "code1"
 # yabai -m space 3 --label "code2"
 # yabai -m space 4 --label "social"
-# yabai -m space 5 --label "write"
+# yabai -m space 5 --label "write. 
 # yabai -m space 6 --label "play"
 # yabai -m space 7 --label "script"
 # yabai -m space 8 --label "play"
@@ -79,8 +117,10 @@ yabai -m rule --add app="^Zen.*$" \
 # events
 ## windows crud events, trigger to sketchybars custom event windows_changed
 yabai -m signal --add event=window_created action="sketchybar  --trigger event_custom_windows_changed" 
-yabai -m signal --add event=window_destroyed action="sketchybar  --trigger event_custom_windows_changed"
+yabai -m signal --add event=window_destroyed action="sketchybar --trigger event_custom_windows_changed"
 # yabai -m signal --add event=window_moved action="sketchybar  --trigger event_custom_windows_changed"
-    
-# borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=7.0 &
+# borders active_color=0xffd79921 inactive_color=0xff494d64 width=8.0 &
+# borders active_color=${COLOR_3} inactive_color=0xff494d64  order=belove style=corner width=8.0 & 
+ 
+yabai -m signal --add event=window_focused action="~/.config/yabai/input_switch.sh"
 echo "yabai configuration loaded.."

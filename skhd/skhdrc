@@ -85,8 +85,8 @@ alt - k : yabai -m window --focus north || yabai -m window --focus stack.prev ||
 alt - j : yabai -m window --focus south || yabai -m window --focus stack.next || yabai -m window --focus stack.first
 
 # focus monitor alt a alt s
-alt - a : yabai -m display --focus prev
-alt - s : yabai -m display --focus next
+alt - 0x2B : yabai -m display --focus prev
+alt - 0x2F : yabai -m display --focus next
 
 # swap managed window
 shift + alt - h : yabai -m window --swap west
@@ -192,7 +192,10 @@ alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 alt - v :   yabai -m space --layout stack  && \
             yabai -m space --padding abs:100:100:100:100 && \
             sketchybar --trigger event_custom_layout_changed
-            # yabai -m space --balance
+
+shift + alt  - v :   yabai -m space --padding abs:12:12:12:12 
+                    # sketchybar --trigger event_custom_layout_changed
+                    # yabai -m space --balance
 
 # toggle sticky(+float), picture-in-picture
 # alt - p : yabai -m window --toggle sticky --toggle pip
@@ -206,11 +209,27 @@ alt - b : /Applications/Zen.app/Contents/MacOS/zen
 #alt -space to run cmd+space
 
 alt - space: skhd -k "cmd - space"
-alt - x: skhd -k "cmd - w"
 alt - w: skhd -k "cmd - w"
 # cmd - x: skhd -k "cmd - w"
 
 # reload yabai config
 # ctrl + alt - q : yabai --restart-service ; sketchybar --reload
-ctrl + alt - q : sketchybar --reload
+ctrl + alt - q : sketchybar --reload; toptop_bar --reload
 
+
+# alt - a : sh ~/.config/skhd/focus_window.sh 1
+# alt - s : sh ~/.config/skhd/focus_window.sh 2
+alt - a : sh ~/.config/skhd/focus_window.sh 1
+alt - s : sh ~/.config/skhd/focus_window.sh 2
+alt - d : sh ~/.config/skhd/focus_window.sh 3
+alt - f : sh ~/.config/skhd/focus_window.sh 4
+# alt - g : sh ~/.config/skhd/focus_window.sh 5
+# alt - h : sh ~/.config/skhd/focus_window.sh 6
+
+alt - q : $HOME/.config/skhd/kill_last_instance.sh
+alt - x : $HOME/.config/skhd/kill_last_instance.sh
+
+# prevents skhd from monitoring events for listed processes.
+.blacklist [
+    "UTM"
+]
